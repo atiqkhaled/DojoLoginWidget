@@ -1,0 +1,127 @@
+<div>
+
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="resources/css/flickrview.css">
+	<!-- dynamically apply native visual theme according to the browser user agent -->
+	
+</head>
+<body style="visibility:hidden;">
+<!-- Feed view -->
+<div data-dojo-type="dojox/mobile/View" data-dojo-props='selected:true'>
+<div id="feedHeading"
+		 data-dojo-type="dojox/mobile/Heading"
+		 data-dojo-props="fixed: 'top'">
+   
+        
+					<span data-dojo-type="dojox/mobile/ToolBarButton"
+						  data-dojo-props="icon: 'resources/images/settings.png', moveTo:'settings', transitionDir:'-1', transition:'none'"
+						  style="float:left;"></span>
+					<span id="refreshButton" data-dojo-type="dojox/mobile/ToolBarButton"
+						  data-dojo-props="icon: 'resources/images/refresh.png'"
+						  style="float:right;"></span>
+            
+        
+                
+               
+            
+    <table>
+                  <tr>
+                      <td style="padding: 0px 50px 30px 0px;">
+                <ul data-dojo-type="dojox/mobile/TabBar" data-dojo-props='barType:"segmentedControl"'>
+                    <li id="feedSelectId" data-dojo-type="dojox/mobile/TabBarButton" style="width:80px"
+                        data-dojo-props="selected:true, moveTo:'feed', transitionDir:'1' ">Feed</li>
+                    <li data-dojo-type="dojox/mobile/TabBarButton" data-dojo-props="moveTo:'homeView'" style="width:80px">View</li>
+                    <li data-dojo-type="dojox/mobile/TabBarButton" style="width:80px">Download</li>
+              
+                </ul>
+                      </td>
+                  <tr>
+                      
+            </table>     
+               
+                                       
+	</div>
+<div id="feed" data-dojo-type="flickrview/FeedView" data-dojo-props="selected: true">
+	
+	<div id="feedList" data-dojo-type="dojox/mobile/EdgeToEdgeList">
+	</div>
+</div>
+<!-- Settings view -->
+<div id="settings" data-dojo-type="flickrview/SettingsView">
+	<div data-dojo-type="dojox/mobile/Heading"
+		 data-dojo-props="fixed: 'top', label: 'Settings'">
+			  <span id="doneButton" data-dojo-type="dojox/mobile/ToolBarButton"
+					data-dojo-props="label:'Done', moveTo:'#', transition:'none'" style="float:right;"></span>
+	</div>
+	<div data-dojo-type="dojox/mobile/RoundRect">
+		<div data-dojo-type="dojox/mobile/FormLayout"
+			 data-dojo-props="columns:'two'">
+			<div>
+				<label for="tags">Tags</label>
+				<fieldset>
+					<input type="text" id="tags" data-dojo-type="dojox/mobile/TextBox"
+						   data-dojo-props="value:''">
+				</fieldset>
+			</div>
+			<div>
+				<label for="select">Selection</label>
+				<fieldset>
+					<input type="checkbox" id="select" data-dojo-type="dojox/mobile/Switch"
+						   value="on" leftLabel="All" rightLabel="Any">
+				</fieldset>
+			</div>
+			<div>
+				<label>Feed language</label>
+				<fieldset>
+					<input id="en-us" data-dojo-type="dojox/mobile/RadioButton" checked
+						   type="radio" name="feedLanguage" value="en-us"><label for="en-us">English</label><br />
+					<input id="fr-fr" data-dojo-type="dojox/mobile/RadioButton"
+						   type="radio" name="feedLanguage" value="fr-fr"><label for="fr-fr">French</label><br />
+					<input id="de-de" data-dojo-type="dojox/mobile/RadioButton"
+						   type="radio" name="feedLanguage" value="de-de"><label for="de-de">German</label><br />
+					<input id="it-it" data-dojo-type="dojox/mobile/RadioButton"
+						   type="radio" name="feedLanguage" value="it-it"><label for="it-it">Italian</label><br />
+					<input id="ko-kr" data-dojo-type="dojox/mobile/RadioButton"
+						   type="radio" name="feedLanguage" value="ko-kr"><label for="ko-kr">Korean</label><br />
+					<input id="pt-br" data-dojo-type="dojox/mobile/RadioButton"
+						   type="radio" name="feedLanguage" value="pt-br"><label for="pt-br">Portuguese (Br)</label><br />
+					<input id="es-us" data-dojo-type="dojox/mobile/RadioButton"
+						   type="radio" name="feedLanguage" value="es-us"><label for="es-us">Spanish</label><br />
+					<input id="zh-hk" data-dojo-type="dojox/mobile/RadioButton"
+						   type="radio" name="feedLanguage" value="zh-hk"><label for="zh-hk">Chinese (HK)</label><br />
+				</fieldset>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Details view -->
+<div id="details" data-dojo-type="dojox/mobile/View">
+	<div id="detailsHeading" data-dojo-type="dojox/mobile/Heading"
+		 data-dojo-props="label: 'Details', back:'Back', moveTo:'feed', transition:'slide', transitionDir:'-1'">
+	</div>
+	<div id="detailsContainer" data-dojo-type="dojox/mobile/RoundRect">
+	</div>
+</div>
+
+<div id="homeView" data-dojo-type="dojox/mobile/View">
+		<!-- a sample heading -->
+		<h1 id="homeViewBack" data-dojo-type="dojox/mobile/Heading" data-dojo-props="back:'Back', moveTo:'#', transition:'none'">"Homepage" View</h1>
+		<!-- a rounded rectangle list container -->
+		<ul data-dojo-type="dojox/mobile/RoundRectList">
+			<!-- list item with an icon containing a switch -->
+			<li data-dojo-type="dojox/mobile/ListItem" data-dojo-props="icon:'resources/images/icon-1.png'">Airplane Mode
+				<!-- the switch -->
+				<div data-dojo-type="dojox/mobile/Switch"></div>
+			</li>
+			<!-- list item with an icon that slides this view away and then loads another page -->
+			<li data-dojo-type="dojox/mobile/ListItem" data-dojo-props="icon:'resources/images/icon-2.png', rightText:'mac'">Wi-Fi</li>
+			<!-- list item with an icon that slides to a view called "general" -->
+			<li data-dojo-type="dojox/mobile/ListItem" data-dojo-props="icon:'resources/images/icon-3.png', rightText:'AcmePhone', moveTo:'general'">Carrier</li>
+		</ul>
+	</div>
+
+</div>
+</body>
+</html>
+</div>

@@ -1,0 +1,44 @@
+/* 
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+
+function doOnRowSelectedUserId(id){
+  var editId=document.getElementById('userEditId');
+  var deleteId=document.getElementById('userDeleteId');
+  if(id!=null){
+     editId.value=id.valueOf();
+     deleteId.value=id.valueOf();
+  }
+  
+}
+var mygrid;
+function checkForUserIsSelectd(){
+    if(mygrid.getSelectedRowId()!=null)
+        return true;
+    else{
+        alert("No user been Selected");
+        return false;
+    }
+}
+
+function doOnRowSelectedContactId(id){
+  var editId=document.getElementById('userContactEditId');
+  var addId=document.getElementById('addContactId');
+  if(id!=null){
+     
+          editId.value=id.valueOf();
+          addId.value=id.valueOf();
+  }
+  
+}
+var contactgrid;
+function checkForUserContactIsSelectd(){
+    if(contactgrid.getSelectedRowId()!=null)
+        return true;
+    else{
+        alert("No user been Selected");
+        return false;
+    }
+}

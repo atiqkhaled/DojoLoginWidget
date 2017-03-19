@@ -1,0 +1,33 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Feb 8, 2016, 3:23:26 PM
+    Author     : atiqkhaled
+*/
+
+html, body {
+    height: 100%;
+    margin: 0;
+    /*Overflow:  hidden; document scrollbar will not show */
+    overflow: hidden;
+    padding: 0;
+}
+
+#appLayout {
+    height: 100%;
+}
+#leftCol {
+    width: 14em;
+}
+
+.claro .demoLayout .edgePanel {
+    background-color: #F4F4F4;
+}
+
+#viewsChart {
+    width: 550px;
+    height: 550px;
+}

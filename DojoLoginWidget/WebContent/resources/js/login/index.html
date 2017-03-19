@@ -1,0 +1,98 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes"/>
+	<title>	login </title>
+	<!-- application stylesheet will go here -->
+	<!-- dynamically apply native visual theme according to the browser user agent -->
+        <link rel="stylesheet" type="text/css" href="resources/css/demo.css"/>
+	<script type="text/javascript" src="resources/dojox/mobile/deviceTheme.js"></script>
+	<!-- dojo configuration options -->
+	<script type="text/javascript">
+		dojoConfig = {
+			async: true,
+			baseUrl: './',
+			parseOnLoad: false,
+			mblHideAddressBar: true,
+			extraLocale: ["en-us", "fr-fr", "de-de", "it-it", "ko-kr", "pt-br", "es-us", "zh-hk"],
+			packages: [{
+				name: "flickrview",
+				location: "resources/js/flickrview"
+			},
+                        {
+                            name:"login",
+                            location: "resources/js/login"
+                        },
+                        {
+                            name: "dojo",
+                            location: "resources/dojo"
+                        },
+                        {
+                            name: "dijit",
+                            location: "resources/dijit"
+                        },
+                        {
+                            name: "dojox",
+                            location: "resources/dojox"
+                        }
+                    ]
+		};
+	</script>
+	<!-- dojo bootstrap -->
+	<script type="text/javascript" src="resources/dojo/dojo.js"></script>
+	<!-- dojo application code -->
+	<script type="text/javascript">
+		require([
+			"dojox/mobile/parser",
+            "dojox/mobile/ProgressIndicator",
+            "dojo/_base/window",
+            "dijit/registry",
+			"dojox/mobile/compat",
+			"dojo/domReady!",
+            "dojox/mobile/View",
+            "dojox/mobile/Heading",
+            "dojox/mobile/RoundRect",
+            "login/login"
+        ], function (parser,ProgressIndicator,win) {
+			  flickrview = {};
+			  flickrview.QUERY = {
+				 tags: "famous,bridges",
+				 tagmode: "all",
+				 format: "json",
+				 lang: "en-us"
+			  };
+            // Parse the page for widget 
+			parser.parse();
+                       
+		});
+                
+	</script>
+
+    </head>
+    <body style="visibility:hidden;">
+      <div id="rootView"> 
+      
+        <div id="loading" data-dojo-type="dojox/mobile/View"  data-dojo-props="selected:true">
+            <div id="mainVew">
+            <h1 data-dojo-type="dojox/mobile/Heading">Login View</h1>
+            
+              <div  data-dojo-type="dojox/mobile/RoundRect">
+                  <table align="center">
+                      <tr>
+                          <td align="center">
+                            <div  data-dojo-type="login/login"></div>
+                          </td>
+                      </tr>    
+                  </table>  
+              </div>
+        </div>
+       </div> 
+      </div>    
+    </body>
+</html>
