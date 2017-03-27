@@ -34,7 +34,7 @@ log.submittEvnt.on("click",lang.hitch(this, function() {
 
 ### License
 
-This project is for research purpose to understand how widget works. Author is **atiqkhlaed**
+This project is for research purpose to understand how widget works. Author is **atiqkhaled**
 
 
 
