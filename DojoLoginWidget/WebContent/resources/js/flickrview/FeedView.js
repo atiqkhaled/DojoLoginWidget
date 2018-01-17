@@ -38,9 +38,7 @@ define([
                 
 		// init variables and handlers
 		startup: function() {
-                       
-    
-			this.inherited(arguments);
+                       this.inherited(arguments);
 			// retain widgets references
 			this.refreshButton = registry.byId("refreshButton");
 			this.feedList = registry.byId("feedList");
