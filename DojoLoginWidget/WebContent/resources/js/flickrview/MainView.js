@@ -24,13 +24,11 @@ define([
 	  "flickrview/SettingsView"	
   ], function(declare, _WidgetBase, _TemplatedMixin, _OnDijitClickMixin, _WidgetsInTemplateMixin, template){
        return declare([_WidgetBase,_OnDijitClickMixin, _TemplatedMixin,_WidgetsInTemplateMixin], {
-
          // rendering FlickerView template
          templateString: template,
          // Colors for our background animation
          baseBackgroundColor: "#fff",
          mouseBackgroundColor: "#def",
-                       
          postCreate : function() {
         	console.log("postCreate");
         	this.inherited(arguments);
