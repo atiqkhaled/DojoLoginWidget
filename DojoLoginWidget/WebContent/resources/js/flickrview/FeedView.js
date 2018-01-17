@@ -35,8 +35,7 @@ define([
 			timeout: 20000,
 			query: null
 		},
-                
-		// init variables and handlers
+                // init variables and handlers
 		startup: function() {
                        this.inherited(arguments);
 			// retain widgets references
