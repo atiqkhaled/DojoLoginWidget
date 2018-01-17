@@ -12,9 +12,7 @@ define([
 		selectSwitch: '',
 		selectedLanguage: '',
                 feedSelect: '',
-              
-
-		startup: function () {
+                startup: function () {
 			this.inherited(arguments);
 			this.feedView = registry.byId("feed");
 			this.tagInput = registry.byId("tags");
